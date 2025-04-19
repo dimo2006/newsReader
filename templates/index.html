@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مترجم اخبار</title>
+    <style>
+        body { font-family: Tahoma, sans-serif; direction: rtl; background-color: #f0f0f0; padding: 20px; }
+        h1 { text-align: center; }
+        button { font-size: 16px; padding: 10px; margin: 10px 0; }
+        .news { margin-bottom: 20px; padding: 10px; background-color: #fff; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+        .news h3 { margin-top: 0; }
+        .news p { margin: 5px 0; }
+    </style>
+</head>
+<body>
+
+<h1>مترجم اخبار</h1>
+
+<form method="post">
+    <button type="submit">دریافت اخبار</button>
+</form>
+
+{% if news_list %}
+    <h2>اخبار داغ</h2>
+    {% for news in news_list %}
+    <div class="news">
+        <h3><a href='{{ news.webUrl }}'>{{ news.title }}</a></h3>
+		<h6>{{ news.title_trans }}</h6>
+        
+        <p>{{ news.section }}/{{ news.newsDate }}</p>
+        
+    </div>
+    {% endfor %}
+{% endif %}
+
+</body>
+</html>
