@@ -1,1 +1,1 @@
-get 15 top news from gurdian
+get 15 top news from guardian
